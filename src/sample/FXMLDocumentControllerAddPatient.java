@@ -102,6 +102,9 @@ public class FXMLDocumentControllerAddPatient {
             PatientName.setText(selectedItemsPatient.getPat_name().strip());
             patAdd.setText(selectedItemsPatient.getPat_num().strip());
             patAge.setText("" + selectedItemsPatient.getPat_age());
+            PatientName.setEditable(false);
+            patAdd.setEditable(false);
+            patAge.setEditable(false);
             String gender = selectedItemsPatient.getPat_gender();
             if(gender.equals("m")){
                 male.selectedProperty().set(true);
@@ -142,7 +145,7 @@ public class FXMLDocumentControllerAddPatient {
             }
             Stage primaryStage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
             Parent root = FXMLLoader.load(getClass().getResource("PharmacistBill.fxml"));
-            primaryStage.setTitle("Hello ");
+//            primaryStage.setTitle("Hello ");
             primaryStage.setScene(new Scene(root, 750, 600));
             primaryStage.show();
         } catch (IOException exception) {
@@ -153,7 +156,7 @@ public class FXMLDocumentControllerAddPatient {
         try {
             Stage primaryStage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
             Parent root = FXMLLoader.load(getClass().getResource("Transaction.fxml"));
-            primaryStage.setTitle("Hello ");
+//            primaryStage.setTitle("Hello ");
             primaryStage.setScene(new Scene(root, 750, 600));
             primaryStage.show();
         }catch (Exception e){
